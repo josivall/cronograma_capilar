@@ -3,7 +3,7 @@ https://github.com/josivall/cronograma_capilar.git
 
 Autores:
 jhonatan abreu dos santos
-Juliia de almeida barreira
+Julia de almeida barreira
 
 Objetivo Geral:
 Desenvolver um sistema simples em linguagem C que permita ao usuário planejar e
