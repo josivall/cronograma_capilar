@@ -1,0 +1,9 @@
+# Compilados
+bin/
+*.o
+*.out
+*.exe
+
+# Arquivos temporários
+*~
+.vscode/
