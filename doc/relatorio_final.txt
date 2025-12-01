@@ -1,0 +1,53 @@
+1. Desafios encontrados
+
+Organizar o código usando múltiplos arquivos .c e .h.
+
+Entender como funcionam os include guards.
+
+Corrigir erros e warnings de compilação.
+
+Criar uma estrutura modular que deixasse o código organizado.
+
+Ajustar entradas de dados e problemas com buffer.
+
+Aprender Git para versionar corretamente.
+
+2. Como resolvi
+
+Separei o código em módulos lógicos: entrada, processamento, saída e tipos.
+
+Adicionei include guards em todos os headers.
+
+Compilei usando -Wall para identificar problemas.
+
+Revisei nomes, padrão de variáveis, indentação e documentação.
+
+Criei README, .gitignore e organizei a estrutura do projeto.
+
+Usei Git para registrar cada etapa do desenvolvimento.
+
+3. Aprendizados
+
+Como trabalhar com estruturas em C (struct) de forma organizada.
+
+Vantagem de usar múltiplos arquivos para deixar o código mais limpo.
+
+Importância dos headers, guards e modularização.
+
+Melhor compreensão de organização de projetos em C.
+
+Uso básico e prático de Git e GitHub.
+
+Estruturação profissional de pastas e documentação.
+
+4. Melhorias futuras
+
+Adicionar sistema para salvar dados em arquivo.
+
+Implementar edição e remoção de usuários.
+
+Criar mais recomendações no cronograma.
+
+Criar interface gráfica ou versão web.
+
+Permitir número maior de usuários.
