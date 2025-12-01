@@ -1,0 +1,23 @@
+3.3 
+
+Header: tipos.h
+   - Contém a definição da struct Usuario.
+   - Contém as constantes MAX e TAM.
+   - Declara extern usuarios[] e qtdUsuarios.
+
+Header: entrada.h
+   - Declara funções de entrada e validação:
+       * cadastrarUsuario()
+       * limparBuffer()
+       * validarTipoCabelo()
+       * validarNivelDano()
+   - Inclui tipos.h.
+
+Header: processamento.h
+   - Declara a função gerarCronograma().
+   - Inclui tipos.h.
+
+Header: saida.h
+   - Declara as funções menu() e mostrarUsuarios().
+   - Inclui tipos.h.
+
