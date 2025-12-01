@@ -55,4 +55,5 @@ Seu nome aqui.
 
  Observações finais
 
-Projeto desenvolvido para a disciplina de Programação Estruturada em C, seguindo boas práticas de modularização e documentação.
+Projeto desenvolvido para a disciplina de Programação Estruturada em C, seguindo boas práticas de modularização e documentação
+para a melhoria do seu cabelo
