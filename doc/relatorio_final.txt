@@ -50,4 +50,4 @@ Criar mais recomendações no cronograma.
 
 Criar interface gráfica ou versão web.
 
-Permitir número maior de usuários.
+Permitir número maior de usuários
