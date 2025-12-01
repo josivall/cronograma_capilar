@@ -1,0 +1,63 @@
+Etapa 3 
+3.1 Para organizar o sistema, dividimos em módulos conforme a 
+responsabilidade de cada grupo de funções. A separação foi feita considerando 
+quais funções trabalham juntas, quais manipulam os mesmos dados e quais áreas 
+lógicas fazem sentido manter independentes.
+Módulo de Entrada (entrada.c / entrada.h):
+Reune  todas as funções responsáveis por coletar dados digitados pelo usuário.
+As funções cadastrarUsuario() e limparBuffer() fazem parte da mesma área, pois ambas lidam diretamente com entrada de dados e tratam problemas de leitura.
+Faz sentido mantê-las juntas porque dependem do mesmo tipo de interação e utilizam a struct de usuário.
+
+Módulo de Saída (saida.c / saida.h)
+Responsável por exibir informações na tela.
+As funções menu() e mostrarUsuarios() trabalham juntas porque cuidam exclusivamente da parte visual do sistema.
+Elas não fazem processamento, apenas mostram dados, então manter esse módulo separado evita mistura entre lógica e interface.
+
+Módulo de Processamento (processamento.c / processamento.h)
+Contém a lógica principal do programa.
+A função gerarCronograma() pertence aqui por ser a parte que realmente “faz acontecer”: gera o cronograma conforme o nível de dano do usuário.
+Ela depende dos dados definidos no módulo de tipos, mas sua responsabilidade é puramente lógica, o que justifica um módulo próprio.
+
+Módulo de Tipos (tipo.c / tipos.h)
+Guarda as definições essenciais do sistema:
+struct Usuario
+vetor global usuarios[MAX]
+contador qtdUsuarios
+Esse módulo representa os dados centrais usados por todas as outras áreas, então faz sentido que as estruturas e variáveis globais fiquem isoladas para evitar confusão e manter o sistema organizado.
+
+3.2 
+Módulo: Entrada
+Arquivo: entrada.c
+Header: entrada.h
+Funções:
+  - cadastrarUsuario();
+  - limparBuffer();
+Dependências:
+  - tipos.h
+
+Módulo: Saída
+Arquivo: saida.c
+Header: saida.h
+Funções:
+  - menu();
+  - mostrarUsuarios();
+Dependências:
+  - tipos.h
+
+Módulo: Processamento
+Arquivo: processamento.c
+Header: processamento.h
+Funções:
+  - gerarCronograma();
+Dependências:
+  - tipos.h
+
+Módulo: Tipos
+Arquivo: tipo.c
+Header: tipos.h
+Definições:
+  - struct Usuario;
+  - usuarios[MAX];
+  - qtdUsuarios;
+Dependências:
+  - nenhuma específica
