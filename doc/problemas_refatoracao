@@ -1,0 +1,372 @@
+Nesta etapa realizamos testes para validar o funcionamento da parte 3 do sistema do nosso projeto integrador, verificando principalmente entradas inválidas, mensagens de erro, o comportamento quando não há usuários cadastrados e a geração correta do cronograma conforme o nível de dano informado. Durante o processo, as principais dificuldades foram garantir que as mensagens aparecessem exatamente iguais nas duas partes do projeto, manter o ambiente de testes limpo sem dados anteriores interferindo, lidar com pequenas diferenças de formatação no terminal  e assegurar que a validação do número do usuário funcionasse em todos os cenários. No geral, os testes mostraram que a parte 3 do projeto esta funcionando como esperado: as validações de entrada estão corretas, as mensagens de erro aparecem no momento certo e a geração do cronograma segue exatamente a lógica definida para cada nível de dano. Mesmo com pequenos detalhes visuais, o sistema apresentou um comportamento consistente e atendeu aos objetivos desta fase.
+ ** Abaixo deixei os testes em si da etapa 9, bem como os das parte 2, para comparação.
+
+ 
+Teste 1: Validação do limite de armazenamento (máximo são 5 pessoas 
+cadastradas). 
+Ação: 
+Tentamos cadastrar 6 pessoas 
+Objetivo: 
+Após cinco usuários o sistema deve mostrar a mensagem:“Limite de usuários 
+atingido!” 
+Resultado Parte 2: 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 1 
+Limite de usuarios atingido!
+
+Resultado Parte 3:
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 1
+
+Limite de usuarios atingido!
+
+Teste 2: Verificar a funcionalidade do cadastro básico 
+Ação: 
+1 - Cadastrar usuario: Julia, ondulado, medio, forca 
+Objetivo: 
+O sistema salva corretamente os quatro campos e exibe mensagem “Usuario 
+cadastrado com sucesso”. 
+Resultado parte 2: 
+PS C:\Users\user\Documents\projeto> gcc testep.c -o testep.exe 
+PS C:\Users\user\Documents\projeto> .\testep.exe 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+====================================        
+Escolha uma opcao: 1 
+Digite o nome do usuario: Julia 
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): ondulado 
+Digite o nivel de dano (baixo, medio, alto): medio 
+Digite o objetivo principal (brilho, forca, controle de frizz...): forca 
+Usuario cadastrado com sucesso! 
+
+Resultado parte 3: 
+PS C:\Users\user\Documents\meu_projeto2.0\meu_projeto> .\bin\projeto
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 1
+
+Digite o nome do usuario: julia linda
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): ondulado
+Digite o nivel de dano (baixo, medio, alto): medio
+Digite o objetivo: forca
+
+Usuario cadastrado com sucesso!
+
+Teste 3: Validar restrição de entrada  
+Ação: digitar “Divooo” como tipo de cabelo 
+Objetivo: Solicitar de novo o tipo de cabelo 
+Resultado parte 2:  
+PS C:\Users\user\Documents\projeto> gcc testep.c -o testep.exe 
+PS C:\Users\user\Documents\projeto> .\testep.exe 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR ==  
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados     
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 1 
+Digite o nome do usuario: jhonatan 
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): Divooo 
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo):
+
+Resultado parte 3:
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 1
+
+Digite o nome do usuario: jhonatan
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): divooo
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo):
+
+Teste 4: Validação de dano 
+Ação: Digitar “extremo”, ou qualquer coisa fora do esperado. 
+Objetivo: Sistema rejeita a entrada e solicita novamente o dano. 
+Resultado parte 2:  
+PS C:\Users\user\Documents\projeto> gcc testep.c -o testep.exe 
+PS C:\Users\user\Documents\projeto> .\testep.exe 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR ==  
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados     
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 1 
+Digite o nome do usuario: jhonatan 
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): Divooo 
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): liso 
+Digite o nivel de dano (baixo, medio, alto): extremo 
+Digite o nivel de dano (baixo, medio, alto): 
+
+Resultado parte 3: 
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 1
+
+Digite o nome do usuario: jhonatan
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): divooo
+Digite o tipo de cabelo (liso, ondulado, cacheado, crespo): cacheado
+Digite o nivel de dano (baixo, medio, alto): extremo
+Digite o nivel de dano (baixo, medio, alto): 
+
+Teste 5: Menu com letra ao invés do número 
+Ação: Digitar letras aleatórias no lugar do número 
+Objetivo:  O sistema deve informar que a opção é invalida e depois repetir o 
+processo do menu. 
+Resultado:  
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: hcfhsd 
+Opcao invalida! Tente novamente. 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao:
+
+Resultado parte 3: 
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: hgftghnngrt
+Opcao invalida!
+
+Teste 6: Gerar cronograma de usuário inexistente 
+Ação: Com dois usuários cadastrados tentar gerar o cronograma de um terceiro 
+usuário não cadastrado. 
+Objetivo: Aparecer a mensagem “Numero invalido!” 
+Resultado parte 2:  
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 3 
+Digite o numero do usuario (1 a 2): 3 
+Numero invalido!
+
+Resultado parte 3: 
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 3
+
+Digite o numero do usuario (1 a 2): 3
+
+Numero invalido!
+
+
+Teste 7: Exibir usuário sem ter feito nenhum cadastro ainda 
+Ação: Solicitar usuários cadastrados sem ter cadastrado ninguém 
+Objetivo: Aparecer a mensagem: “Nenhum usuario cadastrado ainda!” 
+Resultado parte 2: 
+PS C:\Users\user\Documents\projeto> gcc testep.c -o testep.exe 
+PS C:\Users\user\Documents\projeto> .\testep.exe 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR ==  
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados     
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 2 
+Nenhum usuario cadastrado ainda! 
+
+Resultado parte 3: 
+PS C:\Users\user\Documents\meu_projeto2.0\meu_projeto> .\bin\projeto
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 2
+
+Nenhum usuario cadastrado ainda!
+
+Teste 8: Geração de cronograma correta conforme dano 
+Ação: 
+Cadastrar três usuários com nível: baixo, medio, alto 
+Gerar cronograma de cada um. 
+Objetivo: 
+Baixo: Hidratação / Nutrição / Descanso 
+Médio: Hidratação / Nutrição / Reconstrução 
+Alto: Hidratação / Nutrição / Reconstrução / Nutrição 
+Resultado:  
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 3 
+Digite o numero do usuario (1 a 3): 1 
+===== CRONOGRAMA DE Julia ===== 
+Tipo de cabelo: ondulado 
+Nivel de dano: baixo 
+Objetivo: brilho 
+------------------------------- 
+Segunda: Hidratacao 
+Quinta: Nutricao 
+Domingo: Descanso 
+==================================== 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 3 
+Digite o numero do usuario (1 a 3): 2 
+===== CRONOGRAMA DE Lele ===== 
+Tipo de cabelo: liso 
+Nivel de dano: medio 
+Objetivo: forca 
+------------------------------- 
+Segunda: Hidratacao 
+Quarta: Nutricao 
+Sexta: Reconstrucao 
+==================================== 
+==================================== 
+== SISTEMA DE CRONOGRAMA CAPILAR == 
+1 - Cadastrar Usuario 
+2 - Mostrar Usuarios Cadastrados 
+3 - Gerar Cronograma 
+4 - Sair 
+==================================== 
+Escolha uma opcao: 3 
+Digite o numero do usuario (1 a 3): 3 
+===== CRONOGRAMA DE Maria Fernanda ===== 
+Tipo de cabelo: cacheado 
+Nivel de dano: alto 
+Objetivo: brilho 
+------------------------------- 
+Segunda: Hidratacao 
+Terca: Nutricao 
+Quinta: Reconstrucao 
+Sabado: Nutricao 
+==================================== 
+
+Resultado parte 3: 
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 3
+
+Digite o numero do usuario (1 a 3): 1
+
+===== CRONOGRAMA DE Julia =====
+Tipo de cabelo: ondulado
+N├¡vel de dano: baixo
+Objetivo: brilho
+----------------------------
+Segunda: Hidratacao
+Quinta: Nutricao
+Domingo: Descanso
+=============================
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 3
+
+Digite o numero do usuario (1 a 3): 2
+
+===== CRONOGRAMA DE Lele =====
+Tipo de cabelo: liso
+N├¡vel de dano: medio
+Objetivo: forca
+----------------------------
+Segunda: Hidratacao
+Quarta: Nutricao
+Sexta: Reconstrucao
+=============================
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao: 3
+
+Digite o numero do usuario (1 a 3): 3
+
+===== CRONOGRAMA DE Maria Fernanda =====
+Tipo de cabelo: cacheado
+N├¡vel de dano: alto
+Objetivo: brilho
+----------------------------
+Segunda: Hidratacao
+Terca: Nutricao
+Quinta: Reconstrucao
+Sabado: Nutricao
+=============================
+===============================
+== SISTEMA DE CRONOGRAMA =====
+1 - Cadastrar Usuario
+2 - Mostrar Usuarios
+3 - Gerar Cronograma
+4 - Sair
+===============================
+Escolha uma opcao:
