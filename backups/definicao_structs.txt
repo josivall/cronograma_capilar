@@ -1,0 +1,20 @@
+Parte 2 - Definicao de Structs
+2.1 Após a analise do códigp, obeservei que todos os usuarios posuem quatro informações
+que sempre são utlizadas juntas: nome, tipo de cabelo, nível de dano e objetivo. Esses 
+dados estavam organizados em 4 vetores, que em um futuro pode gerar dificuldades em manu
+tenção e também gerar inconcistencias, como  rssas informações dizem respeito de um mesmo
+usuario, faz sentido agrupa-las em uma estrutura só.
+
+2.2 
+Struct: Usuario
+Descrição: Representa um usuario cadastrado, agrupa as informações do usuario cadastrado
+para que possa ser gerado um cronograma.
+Campos:
+char nome[50]: Nome do usuário.
+char tipoCabelo[50]: Tipo do cabelo (liso, ondulado, cacheado ou crespo).
+char nivelDano[50]: Nível de dano do cabelo (baixo, médio ou alto).
+char objetivo[50]: Objetivo principal do tratamento capilar.
+
+2.3 Como o sistema precisa manipular varios usuarios, definimos o uso de um array para armazenamento:
+Usuario usuarios[MAX]; Onde MAX = 5, conforme preestabelecemos no código original.
+

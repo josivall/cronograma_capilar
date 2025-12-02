@@ -1,0 +1,10 @@
+Parte 3 - Etapa 1
+     Em uma primeira analíse eu consigo perceber que o nosso código estava bastante longo,
+todo o código estava no mesmo arquivo no caso main.c,  os dados dos usuarios eram armazenados 
+em arrays diferentes, havia tambem repetições nas mensagens de erros, uma função lidava
+ao mesmo tempo com entrada, saída, validação e processamente fantando clareza e definição das 
+funções, nesse caso em especifico da funções acredito que podemos dividir em funções menores 
+ou então dividilas de fato.
+    Quanto as oportunidades de melhoria podemos agrupar dados relacionados em uma Struct, dividir 
+os aequivos para não ficar tudo em um só código,e vitar repetições, readed=finir as funções para ficar
+mais clara a função em si.
