@@ -1,5 +1,9 @@
 Projeto: Cronograma Capilar em C
+
+
 Autores: Jhonatan abreu dos santos e Júlia de Almeida Barreira
+
+
 Descrição: Programa em C que cadastra usuários, recebe informações sobre cabelo, e gera um cronograma capilar personalizado.
 
  Funcionalidades:
