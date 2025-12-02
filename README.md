@@ -1,7 +1,6 @@
 Projeto: Cronograma Capilar em C
-Descrição
-
-Programa em C que cadastra usuários, recebe informações sobre cabelo, e gera um cronograma capilar personalizado.
+Autores: Jhonatan abreu dos santos e Júlia de Almeida Barreira
+Descrição: Programa em C que cadastra usuários, recebe informações sobre cabelo, e gera um cronograma capilar personalizado.
 
  Funcionalidades:
 Cadastro de usuário
@@ -33,10 +32,6 @@ Como executar:
 /bin        -> executável
 README.md
 .gitignore
-
-Autores:
-jhonatan abreu dos santos
-Júlia de Almeida Barreira
 
 
  Observações finais
